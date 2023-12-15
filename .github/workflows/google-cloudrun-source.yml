@@ -23,7 +23,7 @@ jobs:
       - name: Google Auth
         uses: 'google-github-actions/auth@v2'
         with:
-          workload_identity_provider: projects/100166227581/locations/global/workloadIdentityPools/todo-auth/subject/attribute.repository/CJengineering/nest-todo-test
+          workload_identity_provider: projects/100166227581/locations/global/workloadIdentityPools/todo-auth/providers/test-todo
           service_account: todo-test@cj-tech-381914.iam.gserviceaccount.com
 
       - name: Deploy to Cloud Run
