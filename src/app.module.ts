@@ -8,15 +8,7 @@ import { AppDataSource } from './data-source';
 
 @Module({
   imports: [
-    TodoModule,
-    TypeOrmModule.forRootAsync({
-      useFactory: async () => ({
-        ...AppDataSource.options,
-        migrations: ['dist/migrations/*.js'],
-        migrationsRun: true,
-      }),
-    }),
-    UserModule,TodoModule
+   
   ],
 
   controllers: [AppController],
