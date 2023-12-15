@@ -6,8 +6,8 @@ on:
 
 env:
   PROJECT_ID: cj-tech-381914
-  SERVICE: todo-list-test # TODO: update Cloud Run service name
-  REGION: europe-west1 # TODO: update Cloud Run service region
+  SERVICE: todo-list-test
+  REGION: europe-west1
 
 jobs:
   deploy:
@@ -25,6 +25,11 @@ jobs:
         with:
           workload_identity_provider: projects/100166227581/locations/global/workloadIdentityPools/todo-auth/providers/test-todo
           service_account: todo-test@cj-tech-381914.iam.gserviceaccount.com
+
+      - name: Test Google Auth
+        run: |
+          gcloud auth list
+          gcloud auth print-identity-token
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v2
