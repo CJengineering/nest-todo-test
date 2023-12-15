@@ -26,6 +26,11 @@ jobs:
           workload_identity_provider: projects/100166227581/locations/global/workloadIdentityPools/todo-auth/providers/test-todo
           service_account: todo-test@cj-tech-381914.iam.gserviceaccount.com
 
+      - name: Test Google Auth
+        run: |
+          gcloud auth list
+          gcloud auth print-identity-token
+
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v2
         with:
